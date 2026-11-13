@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#294c3a">
+  <meta name="description" content="Encuentra tu ritmo. Concéntrate 20 minutos, descansa 5 y descubre nuevos compañeros en tu pequeño refugio digital.">
+  <title>Calma · Un paso a la vez</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./assets/sans.css">
+  <link rel="stylesheet" href="./assets/serif.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C9 1 3 8 6 15c7 4 16-1 14-11Z"/><path d="m4 21 11-11M9 16l-1-5m5 1 4 1"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="3"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="m11 4-5 5H3v6h3l5 5ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="m11 4-5 5H3v6h3l5 5ZM16 9l6 6m0-6-6 6"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.2"/></symbol>
+    <symbol id="i-flower" viewBox="0 0 24 24"><path d="M12 9C1-2 0 12 9 12 0 12 1 26 12 15c11 11 12-3 3-3 9 0 8-14-3-3Z"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
+  </defs></svg>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Calma, inicio"><span class="brand-mark"><svg><use href="#i-flower"/></svg></span>calma<span class="brand-dot">.</span></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <button class="nav-button active" data-view="space" aria-current="page">Mi espacio</button>
+      <button class="nav-button" data-view="collection">Mis compañeros <span class="nav-count" id="unlocked-count">1</span></button>
+    </nav>
+    <div class="header-right"><span class="today-date" id="today-date"></span><button id="profile-button" class="profile-button" aria-label="Elegir mi avatar"><span id="header-avatar"></span><span class="online-dot"></span></button></div>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div><div class="eyebrow"><span></span> TU PEQUEÑO REFUGIO DE PRODUCTIVIDAD</div><h1 id="page-title">Un paso <em>a la vez.</em></h1><p id="page-subtitle">Respira. Elige una cosa. Dale tu atención.</p></div>
+      <button id="how-button" class="quiet-button"><svg><use href="#i-info"/></svg> ¿Cómo funciona?</button>
+    </section>
+
+    <div id="space-view">
+      <div class="workspace-grid">
+        <section class="focus-landscape" aria-label="Temporizador Pomodoro">
+          <div class="landscape-image" id="landscape-image"></div>
+          <div class="landscape-shade"></div>
+          <div class="landscape-top"><span class="place-badge"><span></span><span id="landscape-name">Lago de Braies</span></span><button id="landscape-button" class="glass-button"><svg><use href="#i-image"/></svg><span>Cambiar paisaje</span></button></div>
+          <div class="timer-card">
+            <div class="mode-tabs" role="tablist" aria-label="Tipo de sesión">
+              <button id="work-tab" class="mode-tab active" role="tab" aria-selected="true" data-mode="work"><svg><use href="#i-leaf"/></svg> Enfoque <span id="work-mini">20:00</span></button>
+              <button id="rest-tab" class="mode-tab" role="tab" aria-selected="false" data-mode="rest"><svg><use href="#i-sun"/></svg> Descanso <span id="rest-mini">05:00</span></button>
+            </div>
+            <div class="timer-label" id="timer-label">ES TU MOMENTO DE CONCENTRACIÓN</div>
+            <div class="timer-digits" id="timer-digits" role="timer" aria-label="Tiempo restante de enfoque: 20 minutos">20<span>:</span>00</div>
+            <p class="timer-message" id="timer-message">No tienes que hacerlo todo. Solo empezar.</p>
+            <div class="timer-actions"><button class="primary-button start-button" id="start-button"><svg id="start-icon"><use href="#i-play"/></svg><span id="start-label">Comenzar enfoque</span></button><button class="reset-button" id="reset-button" aria-label="Reiniciar el contador de enfoque" title="Reiniciar contador"><svg><use href="#i-reset"/></svg></button></div>
+            <div class="session-progress"><div class="session-dots" id="session-dots" aria-hidden="true"><span></span><span></span><span></span><span></span></div><span id="session-progress-text">0 de 4 sesiones de tu meta diaria</span></div>
+          </div>
+          <div class="landscape-bottom"><button class="sound-button" id="sound-button" aria-pressed="false"><svg id="sound-icon"><use href="#i-mute"/></svg><span id="sound-label">Sonido ambiente</span><span class="sound-toggle"></span></button><span class="landscape-caption" id="landscape-caption">Un respiro entre montañas.</span><div class="landscape-dots" aria-label="Paisajes"><button data-landscape="0" class="active" aria-label="Lago de Braies" aria-pressed="true"></button><button data-landscape="1" aria-label="Bosque sereno" aria-pressed="false"></button><button data-landscape="2" aria-label="Orilla tranquila" aria-pressed="false"></button></div></div>
+        </section>
+
+        <aside class="companion-card" aria-labelledby="companion-heading">
+          <div class="card-topline"><span class="eyebrow">EN BUENA COMPAÑÍA</span><span class="small-flower"><svg><use href="#i-flower"/></svg></span></div>
+          <div class="companion-stage"><div class="stage-halo"></div><span class="sparkle sparkle-one">✧</span><span class="sparkle sparkle-two">✧</span><div id="companion-art" class="companion-art"></div><span class="stage-leaf leaf-one"></span><span class="stage-leaf leaf-two"></span><div class="stage-ground"></div></div>
+          <div class="companion-name-line"><h2 id="companion-heading">Milo, el zorro</h2><span class="level-badge" id="companion-badge">TU COMPAÑERO</span></div>
+          <p class="companion-quote" id="companion-quote">“Las grandes cosas empiezan con pequeños pasos.”</p>
+          <div class="next-reward"><div class="reward-top"><span>Tu próximo compañero</span><span id="next-reward-count">0 / 1</span></div><div class="progress-track"><span id="reward-progress"></span></div><p id="next-reward-copy"><svg><use href="#i-lock"/></svg> Completa 1 sesión y conoce a Nube</p></div>
+          <button class="text-button" id="view-collection-button">Explorar compañeros <svg><use href="#i-arrow"/></svg></button>
+        </aside>
+      </div>
+
+      <section class="daily-stats" aria-label="Tu progreso de hoy">
+        <div class="stats-intro"><span class="stat-icon"><svg><use href="#i-sun"/></svg></span><div><h2>Hoy también cuenta</h2><p>Cada pequeño paso suma.</p></div></div>
+        <div class="stat"><span class="stat-value" id="today-sessions">0<span> sesiones</span></span><span class="stat-label">de enfoque completadas</span></div>
+        <div class="stat"><span class="stat-value" id="today-minutes">0<span> min</span></span><span class="stat-label">dedicados a lo que importa</span></div>
+        <div class="stat"><span class="stat-value" id="total-unlocked">1<span> de 6</span></span><span class="stat-label">compañeros descubiertos</span></div>
+        <div class="daily-plant" aria-hidden="true"><svg viewBox="0 0 70 78"><path d="M35 70V31" fill="none" stroke="#66876b" stroke-width="2"/><path d="M35 48C13 48 10 30 12 27c19-1 25 10 23 21Z" fill="#a7b69b"/><path d="M35 35C32 13 49 9 56 11c2 16-9 25-21 24Z" fill="#708d6e"/><path d="M35 59c1-16 13-18 22-17 0 12-10 18-22 17Z" fill="#c0c8ad"/><ellipse cx="35" cy="72" rx="22" ry="3" fill="#dce0d1"/></svg></div>
+      </section>
+      <div class="bottom-note"><svg><use href="#i-leaf"/></svg> La constancia florece cuando te cuidas. <span>20 minutos para avanzar. 5 para respirar.</span></div>
+    </div>
+
+    <section id="collection-view" hidden aria-label="Colección de compañeros">
+      <div class="collection-intro"><div><h2>Un pequeño equipo. Un gran camino.</h2><p>Completa sesiones de 20 minutos y descubre quién te acompañará después.</p></div><span class="collection-total" id="collection-total">1 / 6 descubiertos</span></div>
+      <div class="collection-grid" id="collection-grid"></div>
+      <div class="collection-note"><svg><use href="#i-leaf"/></svg><p>Los compañeros se desbloquean con tus sesiones acumuladas.<br>Tu progreso se guarda automáticamente en este navegador.</p></div>
+    </section>
+    <footer><span>calma. <span class="footer-divider">/</span> Menos prisa, más presencia.</span><a href="./calma-codigo.zip" download>Descargar código <span class="footer-flower">↗</span></a></footer>
+  </main>
+
+  <dialog id="landscape-dialog" class="modal landscape-modal"><div class="modal-heading"><div><span class="eyebrow">CAMBIA DE AIRE</span><h2>Tu rincón de calma.</h2></div><button class="close-button" data-close aria-label="Cerrar"><svg><use href="#i-close"/></svg></button></div><p>Elige el paisaje que te apetece hoy.</p><div class="landscape-options" id="landscape-options"></div><label class="auto-landscape"><input type="checkbox" id="auto-landscape"> Cambiar de paisaje al completar cada sesión de enfoque</label><small>Fotografías de Unsplash. Disponibles también sin conexión tras la primera visita.</small></dialog>
+
+  <dialog id="how-dialog" class="modal how-modal"><div class="modal-heading"><div><span class="eyebrow">UN RITUAL SENCILLO</span><h2>Encuentra tu ritmo.</h2></div><button class="close-button" data-close aria-label="Cerrar"><svg><use href="#i-close"/></svg></button></div><ol class="how-steps"><li><span>01</span><div><h3>20 minutos de enfoque</h3><p>Elige una tarea y pulsa Comenzar. Puedes pausar y continuar cuando lo necesites.</p></div></li><li><span>02</span><div><h3>5 minutos para ti</h3><p>Al terminar, inicia tu descanso. Estírate, toma agua y deja que la mente respire.</p></div></li><li><span>03</span><div><h3>Tu constancia tiene compañía</h3><p>Descubre personajes al completar 1, 3, 5, 10 y 20 sesiones. Solo los enfoques terminados desbloquean recompensas.</p></div></li></ol><p class="modal-footnote">Los dos contadores mantienen su tiempo por separado. Al cambiar de modo se pausa el anterior. Tu sesión y colección se guardan en este navegador; el tiempo sigue contando si cierras la pestaña.</p><button class="primary-button modal-full" data-close>Vamos a empezar <svg><use href="#i-arrow"/></svg></button></dialog>
+
+  <dialog id="complete-dialog" class="modal complete-modal"><div id="complete-art" class="complete-art"></div><span class="eyebrow" id="complete-eyebrow">UN PASO MÁS</span><h2 id="complete-title">Bien hecho. Te lo has ganado.</h2><p id="complete-copy"></p><div class="complete-rewards" id="complete-rewards" hidden></div><button class="primary-button modal-full" id="complete-next">Tomar un descanso <svg><use href="#i-arrow"/></svg></button><button class="text-button modal-full" id="complete-dismiss">Quedarme aquí un momento</button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

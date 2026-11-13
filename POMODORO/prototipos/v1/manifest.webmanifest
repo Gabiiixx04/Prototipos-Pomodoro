@@ -1,0 +1,13 @@
+{
+  "id": "./",
+  "name": "Calma · Tu espacio de enfoque",
+  "short_name": "Calma",
+  "description": "20 minutos para avanzar. 5 para respirar.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f7f1",
+  "theme_color": "#294c3a",
+  "icons": [{ "src": "./assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

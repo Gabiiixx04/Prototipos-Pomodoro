@@ -1,32 +1,61 @@
-<!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pomodoro Time · Galería de prototipos</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0e1022;--panel:#191b35;--text:#f8f5ff;--muted:#aaa9c8;--pink:#ff70c5;--violet:#a68aff;--line:#ffffff19}
-*{box-sizing:border-box}body{margin:0;color:var(--text);font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse at 15% 0%,#34204e 0,transparent 40%),radial-gradient(ellipse at 90% 20%,#172c55 0,transparent 35%),var(--bg);min-height:100vh}
-.wrap{width:min(1150px,94%);margin:auto;padding:55px 0 70px}.eyebrow{text-transform:uppercase;letter-spacing:3px;color:var(--pink);font-weight:700;font-size:12px;text-align:center}
-h1{text-align:center;font:800 clamp(35px,6vw,65px) 'Playfair Display',serif;letter-spacing:-1.5px;margin:12px 0 10px;background:linear-gradient(90deg,#fff,#f6b8ed,#b7a8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.intro{text-align:center;color:var(--muted);max-width:650px;margin:0 auto 45px;line-height:1.7}
-.proto{background:linear-gradient(145deg,#ffffff0c,#ffffff04);border:1px solid var(--line);border-radius:26px;padding:25px;margin:28px 0 36px;box-shadow:0 25px 70px #0003}
-.top{display:flex;align-items:center;gap:12px;margin-bottom:17px}.num{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--pink),var(--violet));display:grid;place-items:center;font-weight:800;color:#20112f}
-h2{font:700 25px 'Playfair Display',serif;margin:0}.prompt-label{font-size:11px;color:var(--pink);letter-spacing:1.8px;text-transform:uppercase;font-weight:700;margin:5px 0 9px}
-.prompt{border-left:3px solid var(--violet);padding:13px 16px;background:#a68aff0b;color:#dedaf3;line-height:1.75;border-radius:0 12px 12px 0;margin-bottom:20px}
-figure{margin:0;border:1px solid #ffffff24;border-radius:18px;overflow:hidden;background:#080a16;box-shadow:0 12px 35px #0005}
-figure img{display:block;width:100%;height:auto}
-figcaption{padding:12px 15px;color:#aaa9c8;font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-footer{text-align:center;color:var(--muted);font-size:12px;margin-top:40px}
-@media(max-width:600px){.wrap{padding-top:35px}.proto{padding:15px;border-radius:20px}.top{align-items:flex-start}h2{font-size:21px}.intro{font-size:14px}}
-</style></head><body><main class="wrap">
-<div class="eyebrow">Diseño · evolución visual</div><h1>Pomodoro Time</h1>
-<p class="intro">Galería de prototipos de la aplicación Pomodoro. Cada propuesta incluye el prompt original y su captura de diseño.</p>
-<section class="proto"><div class="top"><div class="num">01</div><div><h2>Prototipo inicial · Calm Focus</h2></div></div>
-<div class="prompt-label">Prompt original</div>
-<div class="prompt">Diseñame una pagina web basada en el metodo pomodoro, en ella debe haber contadores para los tiempos de trabajo y tiempos de descanso(individualmente) tambien debe haber un fondo con fotos variantes que transmitan calma y un sistema de recompensas basado en que cuantos mas tiempos de trabajo completes(20 minutos) desbloquees nuevos personajes que sean tu avatar. El contador de los tiempos de descanso seran de 5 minutos</div>
-<figure><img src="images/prototipo-01.png" alt="Captura del prototipo inicial Pomodoro"><figcaption><span>Modelo 01 · Temporizadores y recompensas</span><span>Concepto visual inicial</span></figcaption></figure></section>
-<section class="proto"><div class="top"><div class="num">02</div><div><h2>Prototipo visual · Anime Night</h2></div></div>
-<div class="prompt-label">Prompt de evolución</div>
-<div class="prompt">quiero calendario de sesiones, modo oscuro claro, notificaciones de escritorio y un diseño mas llamativo y con mejores letterings basandome en el ultimo index y dame el codigo completo</div>
-<figure><img src="images/prototipo-02.png" alt="Captura del prototipo visual anime"><figcaption><span>Modelo 02 · Calendario, tema y notificaciones</span><span>Rediseño visual</span></figcaption></figure></section>
-<footer>Pomodoro Time · Galería de prototipos</footer>
-</main></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5ef">
+  <meta name="author" content="Gabriel Paspuel">
+  <meta name="description" content="Del prompt al prototipo: una bitácora de Pomodoro Time, con los mensajes originales y las dos primeras versiones interactivas. Por Gabriel Paspuel.">
+  <title>Pomodoro Time · Del prompt al prototipo</title>
+  <link rel="icon" href="./prototipos/v1/assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./prototipos/v1/assets/sans.css">
+  <link rel="stylesheet" href="./prototipos/v1/assets/serif.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./prompts.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="flower" viewBox="0 0 24 24"><path d="M12 9C1-2 0 12 9 12 0 12 1 26 12 15c11 11 12-3 3-3 9 0 8-14-3-3Z"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="external" viewBox="0 0 24 24"><path d="M14 4h6v6m0-6L10 14M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+    <symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 22h8m-4-5v5"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></symbol>
+    <symbol id="code" viewBox="0 0 24 24"><path d="m7 7-5 5 5 5m10-10 5 5-5 5M14 3l-4 18"/></symbol>
+    <symbol id="down" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="leaf" viewBox="0 0 24 24"><path d="M20 4C9 1 3 8 6 15c7 4 16-1 14-11Z"/><path d="m4 21 11-11"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#prototipos">Saltar a los prototipos</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio"><svg><use href="#flower"/></svg><span>Pomodoro Time<span class="brand-note">BITÁCORA DEL PROCESO</span></span></a>
+    <nav aria-label="Navegación principal"><a href="#prototipos">Prototipos</a><a href="#prompts">Todos los prompts</a><a href="#acerca">Sobre el archivo</a></nav>
+    <span class="header-author">Por <strong>Gabriel Paspuel</strong><span class="author-dot"></span></span>
+  </header>
+
+  <main id="inicio" class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow"><span class="tiny-dot"></span> PRÁCTICA 03 · DESARROLLO DE INTERFACES</p><h1 id="hero-title">Del prompt<br>al <em>prototipo.</em></h1><p class="hero-description">Así empezó Pomodoro Time. Un recorrido por las ideas, las decisiones y las primeras versiones de una app para encontrar tu ritmo.</p><a class="primary-link" href="#prototipos">Explorar los prototipos <svg><use href="#arrow"/></svg></a><div class="hero-meta"><span>02 prototipos interactivos</span><span>05 prompts originales</span><span>01 proceso creativo</span></div></div>
+      <figure class="hero-photo"><img src="./prototipos/v1/assets/lake.jpg" width="1920" height="1280" alt="Un lago tranquilo rodeado de montañas y bosque, el paisaje del primer prototipo"><div class="photo-label"><span class="tiny-dot"></span> EL PUNTO DE PARTIDA</div><figcaption>Un poco menos de prisa.<br><em>Un poco más de presencia.</em></figcaption><span class="photo-index">REF. 01 / CALMA</span></figure>
+    </section>
+
+    <section id="prototipos" class="prototype-section" aria-labelledby="prototype-section-title">
+      <div class="section-heading"><div><p class="eyebrow">01 — EXPLORAR EL RESULTADO</p><h2 id="prototype-section-title">Las primeras versiones, <em>en tus manos.</em></h2></div><p>Lee el prompt. Prueba la respuesta.<br>Elige una versión para empezar.</p></div>
+      <div class="version-navigation" role="tablist" aria-label="Elegir prototipo"><button id="version-v1" role="tab" aria-selected="true" aria-controls="prototype-panel" class="version-tab active" data-version="v1"><span class="version-number">01</span><span><strong>Calma</strong><small>La idea inicial</small></span><span class="version-tag">PRIMER PROTOTIPO</span></button><button id="version-v2" role="tab" aria-selected="false" aria-controls="prototype-panel" class="version-tab" data-version="v2" tabindex="-1"><span class="version-number">02</span><span><strong>Pomodoro Time</strong><small>Una identidad propia</small></span><span class="version-tag">SEGUNDO PROTOTIPO</span></button></div>
+      <div class="prototype-layout" id="prototype-panel" role="tabpanel" aria-labelledby="version-v1">
+        <aside class="prompt-card"><div class="prompt-card-top"><span class="eyebrow">EL PROMPT ORIGINAL</span><button id="copy-active-prompt" class="icon-button" aria-label="Copiar el prompt de esta versión" title="Copiar prompt"><svg><use href="#copy"/></svg></button></div><div class="prompt-heading"><span id="active-prompt-number">01</span><h3 id="active-prompt-title">La idea inicial</h3></div><blockquote id="active-prompt"></blockquote><div class="prompt-author"><span class="author-initials">GP</span><div><strong>Gabriel Paspuel</strong><span>Autor del prompt y del proyecto</span></div></div><div class="changes"><h4>Qué aporta esta versión</h4><ul id="active-changes"></ul></div><a id="download-prototype" class="source-link" href="./prototipos/v1/calma-codigo.zip" download><svg><use href="#code"/></svg> Descargar código de esta versión <svg><use href="#down"/></svg></a></aside>
+        <div class="prototype-browser"><div class="browser-toolbar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span class="browser-path" id="browser-path">prototipo-01 / calma</span><div class="device-controls" role="group" aria-label="Tamaño del prototipo"><button class="active" data-device="desktop" aria-label="Vista de escritorio" aria-pressed="true" title="Escritorio"><svg><use href="#desktop"/></svg></button><button data-device="mobile" aria-label="Vista de móvil" aria-pressed="false" title="Móvil"><svg><use href="#phone"/></svg></button></div><a id="open-prototype" href="./prototipos/v1/" target="_blank" rel="noopener" class="open-prototype" aria-label="Abrir Calma en otra pestaña" title="Abrir en otra pestaña"><svg><use href="#external"/></svg></a></div><div id="prototype-viewport" class="prototype-viewport"><iframe id="frame-v1" title="Prototipo 1: Calma, app Pomodoro interactiva" src="./prototipos/v1/" sandbox="allow-scripts allow-same-origin allow-modals allow-downloads" allow="autoplay" referrerpolicy="same-origin"></iframe><iframe id="frame-v2" title="Prototipo 2: Pomodoro Time de Gabriel Paspuel, app interactiva" data-src="./prototipos/v2/" sandbox="allow-scripts allow-same-origin allow-modals allow-downloads" allow="autoplay" referrerpolicy="same-origin" hidden></iframe></div><div class="browser-bottom"><span><span class="live-dot"></span> PROTOTIPO UTILIZABLE</span><p>Puedes iniciar los contadores, cambiar el paisaje y explorar los avatares.</p></div></div>
+      </div>
+      <p class="prototype-note"><svg><use href="#leaf"/></svg><span>Las dos versiones funcionan de forma independiente. Cada una conserva su propio progreso en este navegador.</span></p>
+    </section>
+
+    <section id="prompts" class="prompts-section" aria-labelledby="prompts-title"><div class="section-heading"><div><p class="eyebrow">02 — VOLVER A LA CONVERSACIÓN</p><h2 id="prompts-title">Los prompts, <em>en orden.</em></h2></div><button id="expand-prompts" class="plain-button" aria-expanded="false">Desplegar todos <span>+</span></button></div><p class="section-description">Los mensajes se conservan tal como fueron escritos, desde la primera idea hasta esta bitácora.</p><div id="prompt-timeline" class="prompt-timeline"></div><div class="scope-note"><span class="scope-symbol">↳</span><p><strong>Un archivo de los primeros pasos.</strong> Se incluyen los dos prototipos anteriores a la última evolución de la app. El prompt de esa evolución queda documentado; su prototipo no se muestra.</p></div></section>
+
+    <section id="acerca" class="about-section" aria-labelledby="about-title"><div><p class="eyebrow">03 — SOBRE ESTE ARCHIVO</p><h2 id="about-title">Cada versión<br>cuenta <em>una decisión.</em></h2></div><div class="about-copy"><p>Esta bitácora reúne los prompts de trabajo de la conversación y las primeras versiones funcionales de Pomodoro Time. Los prototipos se han recuperado del historial del proyecto para que puedas probar cómo era la app en cada etapa.</p><div class="about-facts"><div><span>Autoría</span><strong>Gabriel Paspuel</strong></div><div><span>Proyecto</span><strong>Pomodoro Time</strong></div><div><span>Entrega</span><strong>Práctica 3 · Desarrollo de Interfaces</strong></div></div><a class="text-link" href="./bitacora-codigo.zip" download>Descargar la bitácora completa <svg><use href="#down"/></svg></a></div></section>
+    <noscript><p>Para explorar todos los prompts, activa JavaScript. Puedes abrir los prototipos directamente: <a href="./prototipos/v1/">Calma</a> y <a href="./prototipos/v2/">Pomodoro Time</a>.</p></noscript>
+    <footer><a class="footer-brand" href="#inicio"><svg><use href="#flower"/></svg> Pomodoro Time <span>/ Bitácora</span></a><span>Creado por <strong>Gabriel Paspuel</strong></span><a href="#inicio">Volver al principio ↑</a></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
